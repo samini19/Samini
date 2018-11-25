@@ -1,16 +1,18 @@
 version: 0.0
 os: windows
 files:
-  - source: target/ROOT.war
-    destination: /home/ec2-user/javaapp
+  - source: .\Samini-master
+    destination: c:\Samini-master
 hooks:
+  BeforeInstall:
+    - location: .\scripts\before-install.bat
+      timeout: 900
   AfterInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/codestar_remote_access
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
+    - location: .\scripts\after-install.bat     
+      timeout: 900
+  ApplicationStart:
+    - location: .\scripts\application-start.bat  
+      timeout: 900
+  ValidateService:
+    - location: .\scripts\validate-service.bat    
+      timeout: 900 
