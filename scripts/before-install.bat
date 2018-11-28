@@ -1,4 +1,4 @@
-set FOLDER=%HOMEDRIVE%\temp\CodeDeployExample
+set FOLDER=%HOMEDRIVE%\Samini-master\temp
 
 if exist %FOLDER% (
   rd /s /q "%FOLDER%"
