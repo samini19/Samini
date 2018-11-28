@@ -1,3 +1,3 @@
-cd %HOMEDRIVE%\Samini-master
+cd Samini-master
 
 echo The ValidateService deployment lifecycle event successfully completed. > validate-service.txt
